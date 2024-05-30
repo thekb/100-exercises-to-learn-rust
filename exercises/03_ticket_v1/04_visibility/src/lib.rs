@@ -1,7 +1,7 @@
 mod ticket {
-    struct Ticket {
+    pub struct Ticket {
         title: String,
-        pub description: String,
+        description: String,
         status: String,
     }
 
@@ -32,6 +32,8 @@ mod ticket {
     }
 }
 
+
+
 // TODO: **Exceptionally**, you'll be modifying both the `ticket` module and the `tests` module
 //  in this exercise.
 #[cfg(test)]
@@ -55,7 +57,7 @@ mod tests {
         //
         // TODO: Once you have verified that the below does not compile,
         //   comment the line out to move on to the next exercise!
-        assert_eq!(ticket.description, "A description");
+        //assert_eq!(ticket.description, "A description");
     }
 
     fn encapsulation_cannot_be_violated() {
@@ -68,10 +70,10 @@ mod tests {
         //
         // TODO: Once you have verified that the below does not compile,
         //   comment the lines out to move on to the next exercise!
-        let ticket = Ticket {
-            title: "A title".into(),
-            description: "A description".into(),
-            status: "To-Do".into(),
-        };
+        // let ticket = Ticket {
+        //     title: "A title".into(),
+        //     description: "A description".into(),
+        //     status: "To-Do".into(),
+        // };
     }
 }

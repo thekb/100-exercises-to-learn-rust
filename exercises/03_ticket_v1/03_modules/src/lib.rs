@@ -1,9 +1,10 @@
 mod helpers {
+    use crate::ticket;
     // TODO: Make this code compile, either by adding a `use` statement or by using
     //  the appropriate path to refer to the `Ticket` struct.
 
-    fn create_todo_ticket(title: String, description: String) -> Ticket {
-        Ticket::new(title, description, "To-Do".into())
+    fn create_todo_ticket(title: String, description: String) -> ticket::Ticket {
+        ticket::Ticket::new(title, description, "To-Do".into())
     }
 }
 
@@ -37,4 +38,6 @@ impl Ticket {
             status,
         }
     }
+    
 }
+

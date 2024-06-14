@@ -1,6 +1,10 @@
 // TODO: implement the necessary traits to make the test compile and pass.
 //  You *can't* modify the test.
 
+use std::cmp::PartialEq;
+use std::ops::Add;
+
+#[derive(Debug, Clone, Copy)]
 pub struct WrappingU32 {
     value: u32,
 }
@@ -8,6 +12,26 @@ pub struct WrappingU32 {
 impl WrappingU32 {
     pub fn new(value: u32) -> Self {
         Self { value }
+    }
+}
+
+impl Add for WrappingU32 {
+    type Output = Self;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        return WrappingU32 {
+            value: self.value + rhs.value,
+        };
+    }
+}
+
+impl PartialEq for WrappingU32 {
+    fn eq(&self, other: &Self) -> bool {
+        return self.value == other.value;
+    }
+
+    fn ne(&self, other: &Self) -> bool {
+        return self.value != other.value;
     }
 }
 
